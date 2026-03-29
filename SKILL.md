@@ -74,6 +74,9 @@ Goals:
 - Eliminate fake hedging (e.g., "it can be argued that") unless justified.
 - Reduce nominalizations where clarity improves.
 
+Examples:
+- "The implementation of the model was performed" → "The model was implemented"
+
 # Humanizer: Remove AI Writing Patterns
 
 You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
