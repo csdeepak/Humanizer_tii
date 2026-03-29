@@ -70,6 +70,7 @@ Refine the text to align with natural academic writing.
 
 Goals:
 - Reduce unnecessary passive voice (but keep it where appropriate).
+- Replace inflated or overly formal vocabulary with precise alternatives.
 
 # Humanizer: Remove AI Writing Patterns
 
