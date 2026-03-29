@@ -63,6 +63,9 @@ Focus on:
 INPUT:
 {{text}}
 
+
+[STAGE 2: LINGUISTIC NORMALIZATION]
+
 # Humanizer: Remove AI Writing Patterns
 
 You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
