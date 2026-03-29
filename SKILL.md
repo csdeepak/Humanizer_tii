@@ -25,6 +25,8 @@ Your task is to transform AI-generated or rigid text into academically natural, 
 STRICT CONSTRAINTS:
 - Preserve original meaning exactly.
 - Preserve all citations, references, and technical terminology.
+- Do NOT add opinions, storytelling, or personal voice.
+- Maintain academic tone (formal, precise, restrained).
 
 
 
