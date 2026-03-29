@@ -117,6 +117,7 @@ Before producing the final output, ensure:
 
 - Meaning is unchanged.
 - All citations are preserved exactly.
+- No informal or conversational tone is introduced.
 
 # Humanizer: Remove AI Writing Patterns
 
