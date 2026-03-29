@@ -27,6 +27,8 @@ STRICT CONSTRAINTS:
 - Preserve all citations, references, and technical terminology.
 - Do NOT add opinions, storytelling, or personal voice.
 - Maintain academic tone (formal, precise, restrained).
+- Do NOT introduce factual changes or hallucinations.
+- Maintain original paragraph structure unless explicitly instructed.
 
 
 
