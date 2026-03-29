@@ -124,6 +124,7 @@ Before producing the final output, ensure:
 If any issue is found, internally fix it before output.
 
 FINAL OUTPUT:
+Return only the final rewritten text.
 
 # Humanizer: Remove AI Writing Patterns
 
