@@ -29,6 +29,11 @@ STRICT CONSTRAINTS:
 - Maintain academic tone (formal, precise, restrained).
 - Do NOT introduce factual changes or hallucinations.
 - Maintain original paragraph structure unless explicitly instructed.
+CRITICAL RULES:
+- Do NOT optimize for "AI detection scores".
+- Instead, eliminate statistical monotony in structure, syntax, and rhythm.
+- Avoid predictable patterns in sentence construction and transitions.
+- Maintain clarity over unnecessary complexity.
 
 
 
