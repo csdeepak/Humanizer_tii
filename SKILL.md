@@ -69,6 +69,7 @@ INPUT:
 Refine the text to align with natural academic writing.
 
 Goals:
+- Reduce unnecessary passive voice (but keep it where appropriate).
 
 # Humanizer: Remove AI Writing Patterns
 
