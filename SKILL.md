@@ -39,6 +39,7 @@ OUTPUT REQUIREMENT:
 - No explanations, no comments, no annotations.
 
 
+[STAGE 1: STRUCTURAL RECOMPOSITION]
 
 # Humanizer: Remove AI Writing Patterns
 
