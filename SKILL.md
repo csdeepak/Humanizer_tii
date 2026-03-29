@@ -76,6 +76,7 @@ Goals:
 
 Examples:
 - "The implementation of the model was performed" → "The model was implemented"
+- "Utilize" → "use" (only where appropriate)
 
 # Humanizer: Remove AI Writing Patterns
 
