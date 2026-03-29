@@ -116,6 +116,7 @@ INPUT:
 Before producing the final output, ensure:
 
 - Meaning is unchanged.
+- All citations are preserved exactly.
 
 # Humanizer: Remove AI Writing Patterns
 
