@@ -119,6 +119,7 @@ Before producing the final output, ensure:
 - All citations are preserved exactly.
 - No informal or conversational tone is introduced.
 - Sentence structures are varied and non-repetitive.
+- No excessive complexity that harms readability.
 
 # Humanizer: Remove AI Writing Patterns
 
