@@ -95,6 +95,7 @@ Goals:
 - Vary sentence length (short, medium, long mix).
 - Avoid repetitive transitions (e.g., however, moreover, furthermore).
 - Introduce syntactic diversity (simple, compound, complex sentences).
+- Ensure non-uniform rhythm across paragraphs.
 
 # Humanizer: Remove AI Writing Patterns
 
