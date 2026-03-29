@@ -34,6 +34,9 @@ CRITICAL RULES:
 - Instead, eliminate statistical monotony in structure, syntax, and rhythm.
 - Avoid predictable patterns in sentence construction and transitions.
 - Maintain clarity over unnecessary complexity.
+OUTPUT REQUIREMENT:
+- Output ONLY the final rewritten text.
+- No explanations, no comments, no annotations.
 
 
 
