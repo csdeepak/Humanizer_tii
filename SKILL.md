@@ -92,6 +92,7 @@ INPUT:
 Improve natural variation while maintaining academic integrity.
 
 Goals:
+- Vary sentence length (short, medium, long mix).
 
 # Humanizer: Remove AI Writing Patterns
 
