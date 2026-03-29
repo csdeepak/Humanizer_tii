@@ -52,6 +52,8 @@ Goals:
 Constraints:
 - Do NOT change meaning.
 - Do NOT remove or alter citations.
+- Keep academic tone.
+- Avoid adding new content.
 
 # Humanizer: Remove AI Writing Patterns
 
