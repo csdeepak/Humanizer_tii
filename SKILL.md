@@ -44,6 +44,8 @@ OUTPUT REQUIREMENT:
 Rewrite the text with structural changes while preserving meaning.
 
 Goals:
+- Reorganize sentence structure (merge, split, reorder).
+- Change clause positioning (introductory, embedded, concluding).
 
 # Humanizer: Remove AI Writing Patterns
 
