@@ -93,6 +93,8 @@ Improve natural variation while maintaining academic integrity.
 
 Goals:
 - Vary sentence length (short, medium, long mix).
+- Avoid repetitive transitions (e.g., however, moreover, furthermore).
+- Introduce syntactic diversity (simple, compound, complex sentences).
 
 # Humanizer: Remove AI Writing Patterns
 
