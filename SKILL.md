@@ -99,6 +99,8 @@ Goals:
 
 Specifically:
 - Do NOT allow multiple sentences with identical structure patterns.
+- Avoid repeated clause openings.
+- Break predictable flow patterns.
 
 # Humanizer: Remove AI Writing Patterns
 
