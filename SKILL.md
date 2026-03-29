@@ -57,6 +57,8 @@ Constraints:
 
 Focus on:
 - Structural diversity
+- Natural academic flow
+- Breaking repetitive sentence construction
 
 # Humanizer: Remove AI Writing Patterns
 
