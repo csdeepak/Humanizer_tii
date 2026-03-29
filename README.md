@@ -1,145 +1,201 @@
-# Humanizer
+# Humanizer — Academic Writing Normalization Engine
 
-A Claude Code skill that removes signs of AI-generated writing from text, making it sound more natural and human.
+> Transform AI-generated or rigid text into academically natural, structurally varied, and discipline-consistent writing.
+
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+---
+
+## What it does
+
+Humanizer is a **Claude skill** that normalizes AI-generated academic text through a multi-stage processing pipeline. It does not "humanize" text in a casual or expressive way — instead, it eliminates the statistical monotony in structure, syntax, and rhythm that makes AI writing detectable.
+
+### The pipeline
+
+```
+Input Text
+    │
+    ▼
+┌─────────────────────────────────────┐
+│  STAGE 1: Structural Recomposition  │
+│  Reorganize sentences & clauses     │
+└──────────────┬──────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────┐
+│  STAGE 2: Linguistic Normalization  │
+│  Refine vocabulary & voice          │
+└──────────────┬──────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────┐
+│  STAGE 3: Pattern Disruption        │
+│  Vary rhythm, length & transitions  │
+└──────────────┬──────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────┐
+│  FINAL VALIDATION                   │
+│  Verify meaning, citations & tone   │
+└──────────────┬──────────────────────┘
+               │
+               ▼
+         Final Output
+```
+
+---
 
 ## Installation
 
-### Recommended (clone directly into Claude Code skills directory)
+### Option A: Download as ZIP (recommended for Claude skill upload)
+
+1. Download the repository as a ZIP file from GitHub.
+2. Extract the ZIP.
+3. Upload the `SKILL.md` file directly to Claude as a skill/project file.
+
+### Option B: Clone into Claude Code skills directory
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
+git clone https://github.com/csdee/Humanizer_tii.git ~/.claude/skills/humanizer
 ```
 
-### Manual install/update (only the skill file)
-
-If you already have this repo cloned (or you downloaded `SKILL.md`), copy the skill file into Claude Code’s skills directory:
+### Option C: Manual copy
 
 ```bash
 mkdir -p ~/.claude/skills/humanizer
 cp SKILL.md ~/.claude/skills/humanizer/
 ```
 
+---
+
 ## Usage
 
-In Claude Code, invoke the skill:
+### In Claude (via uploaded skill)
+
+Simply paste your academic text and the skill will automatically process it through all four stages, returning only the normalized output.
+
+### In Claude Code
 
 ```
 /humanizer
 
-[paste your text here]
+[paste your academic text here]
 ```
 
-Or ask Claude to humanize text directly:
+---
 
-```
-Please humanize this text: [your text]
-```
+## Processing stages
 
-## Overview
+### Stage 1 — Structural Recomposition
+Reorganizes sentence structure by merging, splitting, and reordering clauses. Varies information flow so text does not follow a rigid subject-verb-object pattern throughout.
 
-Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) guide, maintained by WikiProject AI Cleanup. This comprehensive guide comes from observations of thousands of instances of AI-generated text.
+### Stage 2 — Linguistic Normalization
+Reduces unnecessary passive voice, replaces inflated vocabulary with precise alternatives, eliminates fake hedging, and reduces nominalizations where clarity improves.
 
-The skill also includes a final "obviously AI generated" audit pass and a second rewrite, to catch lingering AI-isms in the first draft.
+### Stage 3 — Pattern Disruption and Variation
+Varies sentence length, avoids repetitive transitions, introduces syntactic diversity, and ensures non-uniform rhythm across paragraphs.
 
-### Key Insight from Wikipedia
+### Final Validation
+Verifies that meaning is unchanged, all citations are preserved, no informal tone was introduced, and sentence structures are sufficiently varied. Fixes any issues internally before output.
 
-> "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
+---
 
-## 25 Patterns Detected (with Before/After Examples)
+## User controls
 
-### Content Patterns
+The skill supports three adjustable parameters:
 
-| # | Pattern | Before | After |
-|---|---------|--------|-------|
-| 1 | **Significance inflation** | "marking a pivotal moment in the evolution of..." | "was established in 1989 to collect regional statistics" |
-| 2 | **Notability name-dropping** | "cited in NYT, BBC, FT, and The Hindu" | "In a 2024 NYT interview, she argued..." |
-| 3 | **Superficial -ing analyses** | "symbolizing... reflecting... showcasing..." | Remove or expand with actual sources |
-| 4 | **Promotional language** | "nestled within the breathtaking region" | "is a town in the Gonder region" |
-| 5 | **Vague attributions** | "Experts believe it plays a crucial role" | "according to a 2019 survey by..." |
-| 6 | **Formulaic challenges** | "Despite challenges... continues to thrive" | Specific facts about actual challenges |
+| Parameter | Options | Default | Description |
+|---|---|---|---|
+| **Formality Level** | High | High | Maintains strict academic register |
+| **Structural Variation** | Medium / High | Medium | Degree of sentence reorganization |
+| **Lexical Simplicity** | Low / Medium / High | Low | How aggressively to simplify vocabulary |
 
-### Language Patterns
+---
 
-| # | Pattern | Before | After |
-|---|---------|--------|-------|
-| 7 | **AI vocabulary** | "Additionally... testament... landscape... showcasing" | "also... remain common" |
-| 8 | **Copula avoidance** | "serves as... features... boasts" | "is... has" |
-| 9 | **Negative parallelisms** | "It's not just X, it's Y" | State the point directly |
-| 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |
-| 11 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
-| 12 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
+## 25 AI writing patterns detected
 
-### Style Patterns
+The skill includes a comprehensive reference of 25 known AI writing patterns, sourced from [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) guide.
 
-| # | Pattern | Before | After |
-|---|---------|--------|-------|
-| 13 | **Em dash overuse** | "institutions—not the people—yet this continues—" | Use commas or periods |
-| 14 | **Boldface overuse** | "**OKRs**, **KPIs**, **BMC**" | "OKRs, KPIs, BMC" |
-| 15 | **Inline-header lists** | "**Performance:** Performance improved" | Convert to prose |
-| 16 | **Title Case Headings** | "Strategic Negotiations And Partnerships" | "Strategic negotiations and partnerships" |
-| 17 | **Emojis** | "🚀 Launch Phase: 💡 Key Insight:" | Remove emojis |
-| 18 | **Curly quotes** | `said “the project”` | `said “the project”` |
-| 25 | **Hyphenated word pairs** | “cross-functional, data-driven, client-facing” | Drop hyphens on common word pairs |
+### Content patterns (1–6)
+| # | Pattern | Example fix |
+|---|---------|-------------|
+| 1 | Significance inflation | "marking a pivotal moment" → removed |
+| 2 | Notability name-dropping | Source list → specific cited claim |
+| 3 | Superficial -ing analyses | Dangling participles → removed or expanded |
+| 4 | Promotional language | "nestled within breathtaking" → "is a town in" |
+| 5 | Vague attributions | "Experts believe" → specific source cited |
+| 6 | Formulaic challenges | "Despite challenges... thrives" → specific facts |
 
-### Communication Patterns
+### Language patterns (7–12)
+| # | Pattern | Example fix |
+|---|---------|-------------|
+| 7 | AI vocabulary words | "Additionally... testament... landscape" → plain terms |
+| 8 | Copula avoidance | "serves as" → "is" |
+| 9 | Negative parallelisms | "Not just X, it's Y" → state point directly |
+| 10 | Rule of three | Forced triplets → natural grouping |
+| 11 | Synonym cycling | Rotating synonyms → consistent terminology |
+| 12 | False ranges | "from X to Y" → list items directly |
 
-| # | Pattern | Before | After |
-|---|---------|--------|-------|
-| 19 | **Chatbot artifacts** | "I hope this helps! Let me know if..." | Remove entirely |
-| 20 | **Cutoff disclaimers** | "While details are limited in available sources..." | Find sources or remove |
-| 21 | **Sycophantic tone** | "Great question! You're absolutely right!" | Respond directly |
+### Style patterns (13–18, 25)
+| # | Pattern | Example fix |
+|---|---------|-------------|
+| 13 | Em dash overuse | Em dashes → commas or periods |
+| 14 | Boldface overuse | Mechanical bold → plain text |
+| 15 | Inline-header lists | Bold-colon lists → prose |
+| 16 | Title Case headings | "All Words Capitalized" → sentence case |
+| 17 | Emojis | Decorative emojis → removed |
+| 18 | Curly quotes | Curly → straight quotes |
+| 25 | Hyphenated pairs | "cross-functional" → "cross functional" |
 
-### Filler and Hedging
+### Communication patterns (19–21)
+| # | Pattern | Example fix |
+|---|---------|-------------|
+| 19 | Chatbot artifacts | "I hope this helps!" → removed |
+| 20 | Cutoff disclaimers | "While details are limited..." → find source or remove |
+| 21 | Sycophantic tone | "Great question!" → removed |
 
-| # | Pattern | Before | After |
-|---|---------|--------|-------|
-| 22 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
-| 23 | **Excessive hedging** | "could potentially possibly" | "may" |
-| 24 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
+### Filler and hedging (22–24)
+| # | Pattern | Example fix |
+|---|---------|-------------|
+| 22 | Filler phrases | "In order to" → "To" |
+| 23 | Excessive hedging | "could potentially possibly" → "may" |
+| 24 | Generic conclusions | "The future looks bright" → specific plans |
 
-## Full Example
+---
 
-**Before (AI-sounding):**
-> Great question! Here is an essay on this topic. I hope this helps!
->
-> AI-assisted coding serves as an enduring testament to the transformative potential of large language models, marking a pivotal moment in the evolution of software development. In today's rapidly evolving technological landscape, these groundbreaking tools—nestled at the intersection of research and practice—are reshaping how engineers ideate, iterate, and deliver, underscoring their vital role in modern workflows.
->
-> At its core, the value proposition is clear: streamlining processes, enhancing collaboration, and fostering alignment. It's not just about autocomplete; it's about unlocking creativity at scale, ensuring that organizations can remain agile while delivering seamless, intuitive, and powerful experiences to users. The tool serves as a catalyst. The assistant functions as a partner. The system stands as a foundation for innovation.
->
-> Industry observers have noted that adoption has accelerated from hobbyist experiments to enterprise-wide rollouts, from solo developers to cross-functional teams. The technology has been featured in The New York Times, Wired, and The Verge. Additionally, the ability to generate documentation, tests, and refactors showcases how AI can contribute to better outcomes, highlighting the intricate interplay between automation and human judgment.
->
-> - 💡 **Speed:** Code generation is significantly faster, reducing friction and empowering developers.
-> - 🚀 **Quality:** Output quality has been enhanced through improved training, contributing to higher standards.
-> - ✅ **Adoption:** Usage continues to grow, reflecting broader industry trends.
->
-> While specific details are limited based on available information, it could potentially be argued that these tools might have some positive effect. Despite challenges typical of emerging technologies—including hallucinations, bias, and accountability—the ecosystem continues to thrive. In order to fully realize this potential, teams must align with best practices.
->
-> In conclusion, the future looks bright. Exciting times lie ahead as we continue this journey toward excellence. Let me know if you’d like me to expand on any section!
+## Key principles
 
-**After (Humanized):**
-> AI coding assistants can speed up the boring parts of the job. They're great at boilerplate: config files and the little glue code you don't want to write. They can also help you sketch a test, but you still have to read it.
->
-> The dangerous part is how confident the suggestions look. I've accepted code that compiled and passed lint, then discovered later it missed the point because I stopped paying attention.
->
-> If you treat it like autocomplete and review every line, it's useful. If you use it to avoid thinking, it will help you ship bugs faster.
->
-> The only real backstop is tests. Without them, you're mostly judging vibes.
+- **Preserve meaning exactly** — no factual changes, no hallucinations.
+- **Preserve all citations** — references and technical terms stay intact.
+- **Academic tone only** — no opinions, storytelling, or personal voice.
+- **Eliminate statistical monotony** — not optimizing for "AI detection scores", but removing the patterns that make text detectable.
+- **Clarity over complexity** — do not add unnecessary complexity.
+
+---
+
+## Version history
+
+| Version | Changes |
+|---|---|
+| **3.0.0** | Complete rewrite: multi-stage pipeline (Structural Recomposition → Linguistic Normalization → Pattern Disruption → Final Validation), added USER CONTROLS, academic-focused identity, removed casual humanization |
+| **2.3.0** | Added pattern #25: hyphenated word pair overuse |
+| **2.2.0** | Added final "obviously AI generated" audit + second-pass rewrite |
+| **2.1.1** | Fixed pattern #18 example (curly vs straight quotes) |
+| **2.1.0** | Added before/after examples for all 24 patterns |
+| **2.0.0** | Complete rewrite based on raw Wikipedia article content |
+| **1.0.0** | Initial release |
+
+---
 
 ## References
 
-- [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) - Primary source
-- [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) - Maintaining organization
+- [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) — primary source for pattern definitions
+- [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) — maintaining organization
 
-## Version History
-
-- **2.3.0** - Added pattern #25: hyphenated word pair overuse
-- **2.2.0** - Added a final "obviously AI generated" audit + second-pass rewrite prompts
-- **2.1.1** - Fixed pattern #18 example (curly quotes vs straight quotes)
-- **2.1.0** - Added before/after examples for all 24 patterns
-- **2.0.0** - Complete rewrite based on raw Wikipedia article content
-- **1.0.0** - Initial release
+---
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
